@@ -1,25 +1,31 @@
-# CCBP Coding Practice: Automated Browser Solver & Skill Architecture
+# CCBP Learning Portal: Automated Solver & Skill Architecture
 
-[![Problems Solved](https://img.shields.io/badge/Problems%20Solved-21%2F21%20(100%25)-brightgreen.svg)]()
-[![Total Score](https://img.shields.io/badge/Score-413%2F413%20(100%25)-blue.svg)]()
-[![Testcases Passed](https://img.shields.io/badge/Testcases%20Passed-1465%2F1465%20(100%25)-success.svg)]()
+[![Coding Solved](https://img.shields.io/badge/Coding%20Practices-21%2F21%20(100%25)-brightgreen.svg)]()
+[![MCQ Solved](https://img.shields.io/badge/MCQ%20Practices-10%2F10%20(100%25)-success.svg)]()
+[![Total Score](https://img.shields.io/badge/Coding%20Score-413%2F413%20(100%25)-blue.svg)]()
+[![Testcases Passed](https://img.shields.io/badge/Coding%20Testcases-1465%2F1465-brightgreen.svg)]()
 [![Remote Prompts](https://img.shields.io/badge/Chrome%20Prompts-0%20(Rule%201%20Compliant)-orange.svg)]()
 [![Language](https://img.shields.io/badge/Language-C%2B%2B17%20%2F%20Python%203-blueviolet.svg)]()
 
-Production-grade automated browser solving system and reverse-engineered DOM skill set for the **CCBP Learning Portal** (`https://learning.ccbp.in`). Solves algorithmic coding practices with instant Ace Editor AST buffer injection, zero repeated remote debugging pop-ups, and 100% first-pass test case pass rates.
+Production-grade automated browser solving system and reverse-engineered DOM skill set for the **CCBP Learning Portal** (`https://learning.ccbp.in`). Supports both **Algorithmic Coding Practices** (Ace Editor direct AST buffer injection) and **MCQ Practices** with instant evaluation, zero repeated remote debugging pop-ups, and a 100% first-pass pass rate.
 
 ---
 
 ## 🌟 Key Features & Benchmarks
 
 - **Single Permission Grant (Rule 1)**: Conforms to modern Chrome 128+ security requirements by establishing a persistent background CDP WebSocket bridge. **Zero repeated prompts or pop-up notifications.**
-- **Sub-Millisecond Code Injection**: Directly manipulates the underlying Ace Editor buffer via `ace.edit('codingQuestionEditor').setValue(code, -1)` instead of simulated keystrokes, reducing code injection from 15 seconds to $< 2\text{ ms}$.
-- **Comprehensive Solution Library**: 21 optimal C++ implementations covering Stacks, Queues, Linked Lists, Two Pointers, Hashing, Prefix Sum, and Binary Trees.
-- **Flawless Evaluation Record**: **1,465 / 1,465 test cases passed** across all 21 problems (0 failed attempts).
+- **Dual Engine**:
+  - **Coding Practices**: Instant Ace Editor buffer injection via `ace.edit('codingQuestionEditor').setValue(code, -1)` (reduces injection from 15s to $< 2\text{ ms}$).
+  - **MCQ Practices**: Automated question & option parsing (`label.radioButtonLabel`), submission, and transition handling.
+- **Flawless Evaluation Record**:
+  - **Coding Practices**: **21 / 21 solved** | **1,465 / 1,465 test cases passed** (413 / 413 score).
+  - **MCQ Practices**: **10 / 10 correct answers** (0 wrong, 0 unanswered).
 
 ---
 
 ## 📊 Solved Practices Summary
+
+### 1. Algorithmic Coding Practices (21 / 21 Solved)
 
 | # | Problem Name | Module | Difficulty | Score | Test Cases | Algorithm |
 | :-: | :--- | :--- | :-: | :-: | :-: | :--- |
@@ -45,75 +51,58 @@ Production-grade automated browser solving system and reverse-engineered DOM ski
 | 20 | **Inorder Traversal** | Trees | Easy | 10 / 10 | 94 / 94 | Depth-first left $\to$ root $\to$ right ($O(N)$) |
 | 21 | **Postorder Traversal** | Trees | Easy | 15 / 15 | 88 / 88 | Depth-first left $\to$ right $\to$ root ($O(N)$) |
 
----
+### 2. MCQ Practice Session (10 / 10 Correct)
 
-## 🏗️ Architecture & Rule 1 Enforcement
-
-### The Chrome 128+ Problem
-Modern Chrome displays an intrusive modal: *"Allow remote debugging?"* whenever a new external client connects to port 9222. Reconnecting or creating disposable WebSocket sessions triggers multiple prompts.
-
-### The Background Bridge Daemon (`bridge/bridge.py`)
-1. **Single Handshake**: Handshakes to the browser endpoint (`DevToolsActivePort`) exactly once without an `Origin` header.
-2. **Session Multiplexing**: Attaches to the active CCBP tab session via `Target.attachToTarget` (`flatten: true`).
-3. **Local HTTP JSON-RPC Server (`http://127.0.0.1:9999`)**:
-   - `POST /eval`: Evaluates JavaScript inside the active page in $\le 10\text{ ms}$.
-   - `POST /screenshot`: Captures high-res viewport screenshots.
-   - `GET /status`: Verifies target and session health.
-
-```bash
-# Launch persistent bridge daemon
-python3 bridge/bridge.py
-```
+- **Topic**: Introduction to Binary Trees
+- **Score**: **10 Correct Answers**, 0 Wrong Answers, 0 Unanswered
+- **Verified Questions**:
+  1. Balanced Binary Tree property ($|height(L) - height(R)| \le 1$)
+  2. Perfect Binary Tree definition (All levels filled, leaves at same level)
+  3. Degenerate Binary Tree (Every parent has 1 child, resembles linked list)
+  4. Complete Binary Tree (Levels completely filled except last, packed left)
+  5. Internal Node definition (Node with at least one child)
+  6. Leaf Node definition (Node with 0 children)
+  7. Real-life analogy (Family tree with at most 2 children)
+  8. File system utilization (Hierarchical directory structures)
+  9. Full Binary Tree property (Every node has 0 or 2 children)
+  10. Binary Tree definition (At most 2 children per node)
 
 ---
 
 ## 🎯 CCBP Portal DOM & UI Selectors
 
+### Coding Practice Selectors
 | Action / Element | Selector / JavaScript API |
 | :--- | :--- |
 | **Open Question Card** | `document.querySelectorAll('[data-testid="card-container"]')[i].click()` |
 | **Switch to Code Tab** | `Array.from(document.querySelectorAll("div, button, a")).find(el => el.textContent.trim() === "Code").click()` |
-| **Switch to Summary Tab** | `Array.from(document.querySelectorAll("div, button, a")).find(el => el.textContent.trim() === "Summary").click()` |
-| **Get Starter Code** | `ace.edit("codingQuestionEditor").getValue()` |
 | **Inject Solution** | `ace.edit("codingQuestionEditor").setValue(code, -1)` |
 | **Run Code** | `document.getElementById("runCode").click()` |
 | **Submit Code** | `document.getElementById("submitCode").click()` |
 | **Back Button** | `document.querySelector('[data-testid="practice-header-back-button"]').click()` |
 | **Exit Save Modal** | `Array.from(document.querySelectorAll("button")).find(b => b.innerText.trim() === "YES").click()` |
 
----
-
-## 📂 Repository Layout
-
-```
-.
-├── README.md                          # Project documentation and benchmarks
-├── bridge/
-│   ├── bridge.py                      # Persistent CDP bridge daemon
-│   ├── eval_helper.py                 # Remote JS evaluation CLI client
-│   └── requirements.txt               # Dependencies
-├── docs/
-│   ├── MASTER_REPORT.md               # Complete 21-practice evaluation report
-│   └── RULES_AND_ARCHITECTURE.md       # Full engineering blueprint
-├── solutions/
-│   ├── 01_stacks_and_queues/          # Problems 1-7
-│   ├── 02_linked_lists/               # Problems 8-10
-│   ├── 03_hashing_and_two_pointers/   # Problems 11-17
-│   └── 04_trees_and_bst/              # Problems 18-21
-└── assets/                            # Verification screenshots
-```
+### MCQ Practice Selectors
+| Action / Element | Selector / JavaScript API |
+| :--- | :--- |
+| **Question Text** | `document.querySelector(".markdown-body, [class*=\"MarkdownTextContainer\"]").innerText` |
+| **Select Option $i$** | `document.querySelectorAll("label.radioButtonLabel")[i].click()` |
+| **Submit Choice** | `Array.from(document.querySelectorAll("button")).find(b => b.innerText.trim() === "SUBMIT").click()` |
+| **Advance Question** | `Array.from(document.querySelectorAll("button")).find(b => b.innerText.trim() === "NEXT").click()` |
+| **Skip Question** | `document.getElementById("skipButton").click()` (after 5s delay) |
+| **Progress Count** | Checked via `QUESTIONS ATTEMPTED: X/10` |
 
 ---
 
 ## 📸 Verification & Screenshots
 
-| Postorder Traversal (88/88 Passed) | Linked Lists Suite (100% Passed) |
+| MCQ Practice (10/10 Correct) | Postorder Traversal (88/88 Passed) |
 | :---: | :---: |
-| ![Postorder Traversal](assets/ccbp_postorder_solved.png) | ![Linked Lists](assets/ccbp_linked_list_all_solved.png) |
+| ![MCQ Solved](assets/ccbp_mcq_10_correct.png) | ![Postorder Traversal](assets/ccbp_postorder_solved.png) |
 
-| Next Greater Element Suite (100% Passed) | Submission Evaluation Output |
+| Linked Lists Suite (100% Passed) | Next Greater Element Suite (100% Passed) |
 | :---: | :---: |
-| ![NGE Solved](assets/ccbp_nge_solved.png) | ![Evaluation Diff](assets/ccbp_screen_eval.png) |
+| ![Linked Lists](assets/ccbp_linked_list_all_solved.png) | ![NGE Solved](assets/ccbp_nge_solved.png) |
 
 ---
 
