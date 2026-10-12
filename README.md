@@ -1,9 +1,9 @@
 # CCBP Learning Portal: Automated Solver & Skill Architecture
 
 [![Coding Solved](https://img.shields.io/badge/Coding%20Practices-21%2F21%20(100%25)-brightgreen.svg)]()
-[![MCQ Solved](https://img.shields.io/badge/MCQ%20Practices-10%2F10%20(100%25)-success.svg)]()
-[![Total Score](https://img.shields.io/badge/Coding%20Score-413%2F413%20(100%25)-blue.svg)]()
-[![Testcases Passed](https://img.shields.io/badge/Coding%20Testcases-1465%2F1465-brightgreen.svg)]()
+[![MCQ Solved](https://img.shields.io/badge/MCQ%20Practices-40%2F40%20(100%25)-success.svg)]()
+[![Coding Score](https://img.shields.io/badge/Coding%20Score-413%2F413%20(100%25)-blue.svg)]()
+[![Coding Testcases](https://img.shields.io/badge/Coding%20Testcases-1465%2F1465-brightgreen.svg)]()
 [![Remote Prompts](https://img.shields.io/badge/Chrome%20Prompts-0%20(Rule%201%20Compliant)-orange.svg)]()
 [![Language](https://img.shields.io/badge/Language-C%2B%2B17%20%2F%20Python%203-blueviolet.svg)]()
 
@@ -19,13 +19,13 @@ Production-grade automated browser solving system and reverse-engineered DOM ski
   - **MCQ Practices**: Automated question & option parsing (`label.radioButtonLabel`), submission, and transition handling.
 - **Flawless Evaluation Record**:
   - **Coding Practices**: **21 / 21 solved** | **1,465 / 1,465 test cases passed** (413 / 413 score).
-  - **MCQ Practices**: **10 / 10 correct answers** (0 wrong, 0 unanswered).
+  - **MCQ Practices**: **40 / 40 correct answers** across 4 complete sessions (0 wrong, 0 unanswered).
 
 ---
 
 ## 📊 Solved Practices Summary
 
-### 1. Algorithmic Coding Practices (21 / 21 Solved)
+### 1. Algorithmic Coding Practices (21 / 21 Solved, 413/413 Pts)
 
 | # | Problem Name | Module | Difficulty | Score | Test Cases | Algorithm |
 | :-: | :--- | :--- | :-: | :-: | :-: | :--- |
@@ -51,21 +51,14 @@ Production-grade automated browser solving system and reverse-engineered DOM ski
 | 20 | **Inorder Traversal** | Trees | Easy | 10 / 10 | 94 / 94 | Depth-first left $\to$ root $\to$ right ($O(N)$) |
 | 21 | **Postorder Traversal** | Trees | Easy | 15 / 15 | 88 / 88 | Depth-first left $\to$ right $\to$ root ($O(N)$) |
 
-### 2. MCQ Practice Session (10 / 10 Correct)
+### 2. MCQ Practice Sessions (40 / 40 Correct across 4 Sessions)
 
-- **Topic**: Introduction to Binary Trees
-- **Score**: **10 Correct Answers**, 0 Wrong Answers, 0 Unanswered
-- **Verified Questions**:
-  1. Balanced Binary Tree property ($|height(L) - height(R)| \le 1$)
-  2. Perfect Binary Tree definition (All levels filled, leaves at same level)
-  3. Degenerate Binary Tree (Every parent has 1 child, resembles linked list)
-  4. Complete Binary Tree (Levels completely filled except last, packed left)
-  5. Internal Node definition (Node with at least one child)
-  6. Leaf Node definition (Node with 0 children)
-  7. Real-life analogy (Family tree with at most 2 children)
-  8. File system utilization (Hierarchical directory structures)
-  9. Full Binary Tree property (Every node has 0 or 2 children)
-  10. Binary Tree definition (At most 2 children per node)
+| Session # | Topic | Questions | Correct | Accuracy | Key Concepts Tested |
+| :-: | :--- | :-: | :-: | :-: | :--- |
+| **1** | **Introduction to Binary Trees** | 10 | 10 | **100%** | Balanced trees, full/complete/degenerate trees, internal/leaf nodes, degree properties |
+| **2** | **Binary Tree Traversals** | 10 | 10 | **100%** | In-order, Pre-order, Post-order, Level-order (BFS), tree reconstruction, root values |
+| **3** | **Pre-Order Traversal** | 10 | 10 | **100%** | Pre-order recursion, call stack backtrack, $O(N)$ time/space, base case null checks |
+| **4** | **In-Order Traversal** | 10 | 10 | **100%** | Left-Root-Right invariants, call stack bounds, first/last visited nodes, algorithmic complexity |
 
 ---
 
@@ -85,24 +78,24 @@ Production-grade automated browser solving system and reverse-engineered DOM ski
 ### MCQ Practice Selectors
 | Action / Element | Selector / JavaScript API |
 | :--- | :--- |
+| **Start Practice** | `Array.from(document.querySelectorAll("button")).find(b => b.innerText.trim() === "START PRACTICE").click()` |
 | **Question Text** | `document.querySelector(".markdown-body, [class*=\"MarkdownTextContainer\"]").innerText` |
 | **Select Option $i$** | `document.querySelectorAll("label.radioButtonLabel")[i].click()` |
 | **Submit Choice** | `Array.from(document.querySelectorAll("button")).find(b => b.innerText.trim() === "SUBMIT").click()` |
 | **Advance Question** | `Array.from(document.querySelectorAll("button")).find(b => b.innerText.trim() === "NEXT").click()` |
-| **Skip Question** | `document.getElementById("skipButton").click()` (after 5s delay) |
-| **Progress Count** | Checked via `QUESTIONS ATTEMPTED: X/10` |
+| **Exit Modal** | `document.querySelector("button.StartButton-gjsfIy").click()` (Text: `"PROCEED"`) |
 
 ---
 
 ## 📸 Verification & Screenshots
 
-| MCQ Practice (10/10 Correct) | Postorder Traversal (88/88 Passed) |
+| MCQ Practice 4 (10/10 Correct) | MCQ Practice 2 (10/10 Correct) |
 | :---: | :---: |
-| ![MCQ Solved](assets/ccbp_mcq_10_correct.png) | ![Postorder Traversal](assets/ccbp_postorder_solved.png) |
+| ![MCQ Practice 4](assets/ccbp_mcq_practice4_10_correct.png) | ![MCQ Practice 2](assets/ccbp_mcq_practice2_10_correct.png) |
 
-| Linked Lists Suite (100% Passed) | Next Greater Element Suite (100% Passed) |
+| Linked Lists Suite (100% Passed) | Postorder Traversal (88/88 Passed) |
 | :---: | :---: |
-| ![Linked Lists](assets/ccbp_linked_list_all_solved.png) | ![NGE Solved](assets/ccbp_nge_solved.png) |
+| ![Linked Lists](assets/ccbp_linked_list_all_solved.png) | ![Postorder Traversal](assets/ccbp_postorder_solved.png) |
 
 ---
 
