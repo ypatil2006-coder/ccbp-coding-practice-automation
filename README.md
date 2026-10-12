@@ -111,10 +111,12 @@ Production-grade automated browser solving system and reverse-engineered DOM ski
 │   └── ...
 ├── bridge/                     # Persistent CDP WebSocket Daemon & automation scripts
 │   ├── bridge.py               # Rule 1 compliant single-handshake persistent CDP bridge
+│   ├── coding_solver.py        # CLI helper for autonomous coding problem extraction & injection
 │   ├── eval_helper.py          # HTTP IPC client for sub-millisecond evaluation
 │   ├── mcq_solver.py           # Automated MCQ extraction & submission helper
 │   └── requirements.txt
 ├── docs/                       # Comprehensive engineering documentation & blueprints
+│   ├── AGENT_PLAYBOOK.md       # Autonomous AI Agent Playbook, state machines & SOP
 │   ├── MASTER_REPORT.md        # 21/21 Coding Practice report & full performance audit
 │   ├── MCQ_PRACTICE_REPORT.md  # 40/40 MCQ Practice report & React DOM blueprint
 │   └── RULES_AND_ARCHITECTURE.md # Rule 1 enforcement & CDP multiplexing mechanics
@@ -127,8 +129,9 @@ Production-grade automated browser solving system and reverse-engineered DOM ski
 
 ---
 
-## 📖 Detailed Engineering Reports
+## 📖 Detailed Engineering Reports & Agent Knowledge
 
+- 🤖 **[Autonomous AI Agent Playbook & SOP](docs/AGENT_PLAYBOOK.md)**: Machine-executable specifications, state machines, autonomous decision trees, self-healing error recovery, and system prompt templates for AI subagents.
 - 📘 **[Coding Practice Master Report & Benchmark Audit](docs/MASTER_REPORT.md)**: Complete analysis of 21 algorithmic practices, test case matrices, and runtime data.
 - 📝 **[MCQ Practice Master Report & DOM Blueprint](docs/MCQ_PRACTICE_REPORT.md)**: Reverse-engineered React state lifecycle, selector mapping, and 40/40 answers breakdown.
 - 🛡️ **[Rule 1 Architecture & Persistent CDP Mechanics](docs/RULES_AND_ARCHITECTURE.md)**: Chrome 128+ remote debugging security analysis, persistent daemon design, and latency optimizations.
