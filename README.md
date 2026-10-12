@@ -99,5 +99,41 @@ Production-grade automated browser solving system and reverse-engineered DOM ski
 
 ---
 
+## 📂 Repository Layout
+
+```text
+├── assets/                     # Verification screenshots and visual audit proof
+│   ├── ccbp_mcq_practice4_10_correct.png
+│   ├── ccbp_mcq_practice2_10_correct.png
+│   ├── ccbp_mcq_10_correct.png
+│   ├── ccbp_postorder_solved.png
+│   ├── ccbp_linked_list_all_solved.png
+│   └── ...
+├── bridge/                     # Persistent CDP WebSocket Daemon & automation scripts
+│   ├── bridge.py               # Rule 1 compliant single-handshake persistent CDP bridge
+│   ├── eval_helper.py          # HTTP IPC client for sub-millisecond evaluation
+│   ├── mcq_solver.py           # Automated MCQ extraction & submission helper
+│   └── requirements.txt
+├── docs/                       # Comprehensive engineering documentation & blueprints
+│   ├── MASTER_REPORT.md        # 21/21 Coding Practice report & full performance audit
+│   ├── MCQ_PRACTICE_REPORT.md  # 40/40 MCQ Practice report & React DOM blueprint
+│   └── RULES_AND_ARCHITECTURE.md # Rule 1 enforcement & CDP multiplexing mechanics
+└── solutions/                  # Optimized C++17 implementations (100% passed)
+    ├── 01_stacks_and_queues/
+    ├── 02_linked_lists/
+    ├── 03_hashing_and_two_pointers/
+    └── 04_trees_and_bst/
+```
+
+---
+
+## 📖 Detailed Engineering Reports
+
+- 📘 **[Coding Practice Master Report & Benchmark Audit](docs/MASTER_REPORT.md)**: Complete analysis of 21 algorithmic practices, test case matrices, and runtime data.
+- 📝 **[MCQ Practice Master Report & DOM Blueprint](docs/MCQ_PRACTICE_REPORT.md)**: Reverse-engineered React state lifecycle, selector mapping, and 40/40 answers breakdown.
+- 🛡️ **[Rule 1 Architecture & Persistent CDP Mechanics](docs/RULES_AND_ARCHITECTURE.md)**: Chrome 128+ remote debugging security analysis, persistent daemon design, and latency optimizations.
+
+---
+
 ## 📜 License
 MIT License. Created for algorithmic automation and browser engineering research.

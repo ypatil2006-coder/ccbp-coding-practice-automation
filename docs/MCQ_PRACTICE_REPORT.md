@@ -28,14 +28,10 @@ pie title Cumulative MCQ Performance (4 Sessions, 40 Questions)
 ---
 
 ## 1. Visual Verification & Proof of 100% Scores
-
-````carousel
-![MCQ Practice 4 In-Order 10 of 10 Correct](/home/yash/.gemini/antigravity/brain/3340fb1a-71b9-4671-a8fa-629f434f720c/ccbp_mcq_practice4_10_correct.png)
-<!-- slide -->
-![MCQ Practice 2 Traversals 10 of 10 Correct](/home/yash/.gemini/antigravity/brain/3340fb1a-71b9-4671-a8fa-629f434f720c/ccbp_mcq_practice2_10_correct.png)
-<!-- slide -->
-![MCQ Practice 1 Intro to Trees 10 of 10 Correct](/home/yash/.gemini/antigravity/brain/3340fb1a-71b9-4671-a8fa-629f434f720c/ccbp_mcq_10_correct.png)
-````
+ 
+| MCQ Practice 4: In-Order (10/10) | MCQ Practice 2: Traversals (10/10) | MCQ Practice 1: Binary Trees (10/10) |
+| :---: | :---: | :---: |
+| ![MCQ Practice 4](../assets/ccbp_mcq_practice4_10_correct.png) | ![MCQ Practice 2](../assets/ccbp_mcq_practice2_10_correct.png) | ![MCQ Practice 1](../assets/ccbp_mcq_10_correct.png) |
 
 ---
 

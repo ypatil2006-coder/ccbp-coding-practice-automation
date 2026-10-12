@@ -192,19 +192,13 @@ setTimeout(() => {
 
 ## 5. Visual Evidence & Solved States
 
-````carousel
-![Postorder Traversal Solved](/home/yash/.gemini/antigravity/brain/3340fb1a-71b9-4671-a8fa-629f434f720c/ccbp_postorder_solved.png)
-<!-- slide -->
-![Linked Lists All Solved](/home/yash/.gemini/antigravity/brain/3340fb1a-71b9-4671-a8fa-629f434f720c/ccbp_linked_list_all_solved.png)
-<!-- slide -->
-![Next Greater Element Suite Solved](/home/yash/.gemini/antigravity/brain/3340fb1a-71b9-4671-a8fa-629f434f720c/ccbp_nge_solved.png)
-<!-- slide -->
-![Evaluation Diff & Hidden Cases](/home/yash/.gemini/antigravity/brain/3340fb1a-71b9-4671-a8fa-629f434f720c/ccbp_screen_eval.png)
-<!-- slide -->
-![Run Verification Passed](/home/yash/.gemini/antigravity/brain/3340fb1a-71b9-4671-a8fa-629f434f720c/ccbp_screen_run.png)
-<!-- slide -->
-![Queue Implementation 100% Passed](/home/yash/.gemini/antigravity/brain/3340fb1a-71b9-4671-a8fa-629f434f720c/ccbp_screen_solved.png)
-````
+| Postorder Traversal Solved | Linked Lists All Solved | Next Greater Element Suite |
+| :---: | :---: | :---: |
+| ![Postorder Traversal Solved](../assets/ccbp_postorder_solved.png) | ![Linked Lists All Solved](../assets/ccbp_linked_list_all_solved.png) | ![NGE Suite Solved](../assets/ccbp_nge_solved.png) |
+
+| Hidden Testcase Evaluation | Test Run Passed (All Sample Cases) | Queue Implementation Solved |
+| :---: | :---: | :---: |
+| ![Evaluation Diff](../assets/ccbp_screen_eval.png) | ![Run Verification](../assets/ccbp_screen_run.png) | ![Queue Solved](../assets/ccbp_screen_solved.png) |
 
 ---
 
