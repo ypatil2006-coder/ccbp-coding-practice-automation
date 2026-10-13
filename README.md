@@ -1,136 +1,147 @@
-# CCBP Learning Portal: Automated Solver & Skill Architecture
+# CCBP Portal Browser Automation Suite & Agent Skill
 
-[![Coding Solved](https://img.shields.io/badge/Coding%20Practices-27%2F27%20(100%25)-brightgreen.svg)]()
-[![MCQ Solved](https://img.shields.io/badge/MCQ%20Practices-40%2F40%20(100%25)-success.svg)]()
-[![Coding Score](https://img.shields.io/badge/Coding%20Score-533%2F533%20(100%25)-blue.svg)]()
-[![Coding Testcases](https://img.shields.io/badge/Coding%20Testcases-1853%2F1853-brightgreen.svg)]()
-[![Skill Guide](https://img.shields.io/badge/Agent%20Skill-SKILL.md-success.svg)](SKILL.md)
-[![Remote Prompts](https://img.shields.io/badge/Chrome%20Prompts-0%20(Rule%201%20Compliant)-orange.svg)]()
-[![Language](https://img.shields.io/badge/Language-C%2B%2B17%20%2F%20Python%203-blueviolet.svg)]()
-
-Production-grade automated browser solving system and reverse-engineered DOM skill set for the **CCBP Learning Portal** (`https://learning.ccbp.in`). Supports both **Algorithmic Coding Practices** (Ace Editor direct AST buffer injection) and **MCQ Practices** with instant evaluation, zero repeated remote debugging pop-ups, and a 100% first-pass pass rate.
-
-> 🤖 **For AI Agents**: Refer directly to [**SKILL.md**](SKILL.md) for the pure actionable skill instructions, DOM selectors, execution SOP, and error recovery protocols without images or statistics.
+A production-grade browser automation suite and skill specification for AI agents to solve **Coding Practices** and **MCQ Practices** on the **CCBP Learning Portal** (`https://learning.ccbp.in`) via Chrome DevTools Protocol (CDP) and `/browser` workflows.
 
 ---
 
-## 🌟 Key Features & Benchmarks
+## 📌 Agent Skill Specification
 
-- **Single Permission Grant (Rule 1)**: Conforms to modern Chrome 128+ security requirements by establishing a persistent background CDP WebSocket bridge. **Zero repeated prompts or pop-up notifications.**
-- **Dual Engine**:
-  - **Coding Practices**: Instant Ace Editor buffer injection via `ace.edit('codingQuestionEditor').setValue(code, -1)` (reduces injection from 15s to $< 2\text{ ms}$).
-  - **MCQ Practices**: Automated question & option parsing (`label.radioButtonLabel`), submission, and transition handling.
-- **Flawless Evaluation Record**:
-  - **Coding Practices**: **27 / 27 solved** | **1,853 / 1,853 test cases passed** (100% pass rate).
-  - **MCQ Practices**: **40 / 40 correct answers** across 4 complete sessions (0 wrong, 0 unanswered).
+This repository contains the official Antigravity skill definition:  
+👉 **[`SKILL.md`](SKILL.md)** — Ingestible agent instructions with YAML frontmatter, execution state machines, DOM blueprints, and operational runbooks.
 
 ---
 
-## 📊 Solved Practices Summary
+## 🛡️ Core Architecture: Rule 1 Compliance (Persistent CDP Bridge)
 
-### 1. Algorithmic Coding Practices (21 / 21 Solved, 413/413 Pts)
+### The Chrome Security Constraint
+In Chromium / Google Chrome 128+ on Linux and Wayland, any ad-hoc remote debugging connection initiates an OS-level confirmation modal:
+> *"Allow remote debugging? A third-party application is requesting access to inspect and automate Chrome."*
 
-| # | Problem Name | Module | Difficulty | Score | Test Cases | Algorithm |
-| :-: | :--- | :--- | :-: | :-: | :-: | :--- |
-| 1 | **Queue Implementation Using Array** | Stacks & Queues | Easy | 20 / 20 | 88 / 88 | Circular buffer with modular indexing ($O(1)$) |
-| 2 | **Next Greater Element** | Stacks & Queues | Medium | 20 / 20 | 105 / 105 | Monotonic decreasing stack ($O(N)$) |
-| 3 | **Next Greater Element Lookup** | Stacks & Queues | Medium | 20 / 20 | 20 / 20 | Monotonic stack + hash map ($O(N)$) |
-| 4 | **Next Greater Element II** | Stacks & Queues | Medium | 20 / 20 | 106 / 106 | Circular monotonic stack ($O(N)$) |
-| 5 | **Nearest Smaller Element** | Stacks & Queues | Easy | 20 / 20 | 8 / 8 | Monotonic stack left-to-right ($O(N)$) |
-| 6 | **Next Warmer Day Forecast** | Stacks & Queues | Medium | 25 / 25 | 10 / 10 | Daily temperatures index stack ($O(N)$) |
-| 7 | **Find Towers Facing Sea** | Stacks & Queues | Easy | 25 / 25 | 10 / 10 | Right-to-left running maximum ($O(N)$) |
-| 8 | **Insertion At Head - Linked List** | Linked Lists | Easy | 10 / 10 | 104 / 104 | Prepend pointer linking ($O(1)$) |
-| 9 | **Insertion At Tail - Linked List** | Linked Lists | Easy | 10 / 10 | 104 / 104 | Traversal to tail node ($O(N)$) |
-| 10 | **Insertion Before Node With Value X** | Linked Lists | Easy | 10 / 10 | 104 / 104 | Predecessor pointer tracking ($O(N)$) |
-| 11 | **Minimum Balls in the Box** | Frequency / Greedy | Medium | 25 / 25 | 10 / 10 | Frequency hash parity reduction ($O(N)$) |
-| 12 | **Two Sum** | Two Pointers / Hash | Easy | 15 / 15 | 89 / 89 | Hash map complement lookup ($O(N)$) |
-| 13 | **Two Sum II** | Two Pointers | Medium | 20 / 20 | 8 / 8 | Dual pointer convergence 1-based ($O(N)$) |
-| 14 | **Three Sum** | Two Pointers | Medium | 20 / 20 | 106 / 106 | Sorted two-pointer sweep ($O(N^2)$) |
-| 15 | **Four Sum** | Two Pointers | Easy | 20 / 20 | 97 / 97 | Quadruple pointer sweep ($O(N^3)$) |
-| 16 | **Count Subarrays with Target Sum** | Prefix Sum | Easy | 45 / 45 | 152 / 152 | Prefix sum hash frequency counter ($O(N)$) |
-| 17 | **Count Valid Triplets** | Math / Modulo | Medium | 13 / 13 | 30 / 30 | Remainder grouping combinatorics ($O(K^2)$) |
-| 18 | **Binary Tree Representation** | Trees | Easy | 15 / 15 | 90 / 90 | Array level-order tree construction ($O(N)$) |
-| 19 | **Preorder Traversal** | Trees | Easy | 15 / 15 | 107 / 107 | Depth-first root $\to$ left $\to$ right ($O(N)$) |
-| 20 | **Inorder Traversal** | Trees | Easy | 10 / 10 | 94 / 94 | Depth-first left $\to$ root $\to$ right ($O(N)$) |
-| 21 | **Postorder Traversal** | Trees | Easy | 15 / 15 | 88 / 88 | Depth-first left $\to$ right $\to$ root ($O(N)$) |
-| 22 | **Delete Kth Node - Doubly Linked List** | Linked Lists | Easy | 10 / 10 | 103 / 103 | Bi-directional pointer deletion ($O(K)$) |
-| 23 | **Cycle Detection** | Linked Lists | Easy | 15 / 15 | 163 / 163 | Floyd's Tortoise and Hare ($O(N)$) |
-| 24 | **Cycle Detection In Linked List II** | Linked Lists | Medium | 20 / 20 | 8 / 8 | Floyd's Phase 2 Cycle Entry ($O(N)$) |
-| 25 | **Balanced Parenthesis** | Stacks & Queues | Easy | 15 / 15 | 94 / 94 | Stack parenthesis matching ($O(N)$) |
-| 26 | **Balanced Parentheses with Locked Characters** | Stacks & Queues | Medium | 25 / 25 | 10 / 10 | Two-pass flexible parity sweep ($O(N)$) |
-| 27 | **Minimum Removal for Valid Parentheses** | Stacks & Queues | Medium | 25 / 25 | 10 / 10 | Greedy stack index filtering ($O(N)$) |
+Opening ephemeral WebSocket connections, creating short-lived Puppeteer/Playwright instances, or closing and reopening debugging sockets will repeatedly trigger permission popups, halting automated agent pipelines.
 
-### 2. MCQ Practice Sessions (40 / 40 Correct across 4 Sessions)
-
-| Session # | Topic | Questions | Correct | Accuracy | Key Concepts Tested |
-| :-: | :--- | :-: | :-: | :-: | :--- |
-| **1** | **Introduction to Binary Trees** | 10 | 10 | **100%** | Balanced trees, full/complete/degenerate trees, internal/leaf nodes, degree properties |
-| **2** | **Binary Tree Traversals** | 10 | 10 | **100%** | In-order, Pre-order, Post-order, Level-order (BFS), tree reconstruction, root values |
-| **3** | **Pre-Order Traversal** | 10 | 10 | **100%** | Pre-order recursion, call stack backtrack, $O(N)$ time/space, base case null checks |
-| **4** | **In-Order Traversal** | 10 | 10 | **100%** | Left-Root-Right invariants, call stack bounds, first/last visited nodes, algorithmic complexity |
+### The Persistent Daemon Solution
+To guarantee zero repeated popups and sub-millisecond execution:
+1. **Target Discovery**: Read Chrome's active debugging port and path directly from `/home/yash/.config/google-chrome/DevToolsActivePort`.
+2. **Single Handshake**: Establish exactly **one** persistent WebSocket connection to `ws://127.0.0.1:<port><path>` with no `Origin` header (avoiding 403 Forbidden origin checks).
+3. **Session Multiplexing**: Attach to the active CCBP tab using `Target.attachToTarget` (`flatten: true`) and retain the `sessionId`.
+4. **Local Daemon Bridge (`bridge/bridge.py`)**: Expose local HTTP JSON-RPC endpoints on `http://127.0.0.1:9999`:
+   - `POST /eval`: Evaluates JavaScript expressions in the active tab context (<= 2 ms).
+   - `POST /cdp`: Sends raw CDP commands (`method`, `params`).
+   - `GET /status`: Verifies connection health and active target metadata.
+   - `GET /reattach`: Dynamically re-discovers and re-attaches to the CCBP tab if URL navigation occurred.
 
 ---
 
-## 🎯 CCBP Portal DOM & UI Selectors
+## 🎯 CCBP DOM & Component Selector Catalog
 
-### Coding Practice Selectors
-| Action / Element | Selector / JavaScript API |
-| :--- | :--- |
-| **Open Question Card** | `document.querySelectorAll('[data-testid="card-container"]')[i].click()` |
-| **Switch to Code Tab** | `Array.from(document.querySelectorAll("div, button, a")).find(el => el.textContent.trim() === "Code").click()` |
-| **Inject Solution** | `ace.edit("codingQuestionEditor").setValue(code, -1)` |
-| **Run Code** | `document.getElementById("runCode").click()` |
-| **Submit Code** | `document.getElementById("submitCode").click()` |
-| **Back Button** | `document.querySelector('[data-testid="practice-header-back-button"]').click()` |
-| **Exit Save Modal** | `Array.from(document.querySelectorAll("button")).find(b => b.innerText.trim() === "YES").click()` |
+### Coding Practice Interface
+| Action / Element | Selector / JavaScript API | Execution Notes |
+| :--- | :--- | :--- |
+| **Problem Cards** | `[data-testid="card-container"]` | Problem cards listed on practice syllabus view |
+| **Code Tab** | `Array.from(document.querySelectorAll("div, button, a")).find(el => el.textContent.trim() === "Code")` | Mounts Ace editor when viewing problem description |
+| **Description Tab** | `Array.from(document.querySelectorAll("div, button, a")).find(el => el.textContent.trim() === "Description")` | Contains problem statement, examples, and constraints |
+| **Ace Editor Buffer** | `ace.edit("codingQuestionEditor")` | Global Ace editor instance attached to `window.ace` |
+| **Code Injection** | `ace.edit("codingQuestionEditor").setValue(code, -1)` | Instant full-buffer replacement (sets cursor to beginning, no dropped characters) |
+| **Read Editor Code** | `ace.edit("codingQuestionEditor").getValue()` | Extracts current starter template or student code |
+| **Run Button** | `document.getElementById("runCode")` | Compiles and executes code against public sample cases |
+| **Submit Button** | `document.getElementById("submitCode")` | Evaluates code against the full hidden test suite |
+| **Back Button** | `document.querySelector('[data-testid="practice-header-back-button"]')` | Official React router back button |
+| **Unsaved Changes Modal** | `Array.from(document.querySelectorAll("button")).find(b => b.innerText.trim() === "YES")` | Dismisses exit confirmation modal |
 
-### MCQ Practice Selectors
-| Action / Element | Selector / JavaScript API |
-| :--- | :--- |
-| **Start Practice** | `Array.from(document.querySelectorAll("button")).find(b => b.innerText.trim() === "START PRACTICE").click()` |
-| **Question Text** | `document.querySelector(".markdown-body, [class*=\"MarkdownTextContainer\"]").innerText` |
-| **Select Option $i$** | `document.querySelectorAll("label.radioButtonLabel")[i].click()` |
-| **Submit Choice** | `Array.from(document.querySelectorAll("button")).find(b => b.innerText.trim() === "SUBMIT").click()` |
-| **Advance Question** | `Array.from(document.querySelectorAll("button")).find(b => b.innerText.trim() === "NEXT").click()` |
-| **Exit Modal** | `document.querySelector("button.StartButton-gjsfIy").click()` (Text: `"PROCEED"`) |
+### MCQ Practice Interface
+| Action / Element | Selector / JavaScript API | Execution Notes |
+| :--- | :--- | :--- |
+| **Start Practice** | `Array.from(document.querySelectorAll("button")).find(b => b.innerText.trim() === "START PRACTICE")` | Launches active MCQ session from topic overview |
+| **Question Statement** | `.markdown-body` or `[class*="MarkdownTextContainer"]` | Contains question text, formatted code blocks, and math |
+| **Option Radio Labels** | `document.querySelectorAll("label.radioButtonLabel")` | Clickable option `<label>` elements (0-indexed) |
+| **Submit Choice** | `Array.from(document.querySelectorAll("button")).find(b => b.innerText.trim() === "SUBMIT")` | Evaluates selected radio option |
+| **Advance Question** | `Array.from(document.querySelectorAll("button")).find(b => b.innerText.trim() === "NEXT")` | Dynamically replaces SUBMIT button after evaluation |
+| **Proceed Button** | `document.querySelector("button.StartButton-gjsfIy")` | Exits the completion summary modal (text: `"PROCEED"`) |
 
 ---
 
-## 📸 Verification & Screenshots
+## 🔄 Autonomous Execution Protocols
 
-| MCQ Practice 4 (10/10 Correct) | MCQ Practice 2 (10/10 Correct) |
-| :---: | :---: |
-| ![MCQ Practice 4](assets/ccbp_mcq_practice4_10_correct.png) | ![MCQ Practice 2](assets/ccbp_mcq_practice2_10_correct.png) |
+### 1. Coding Practice SOP
+1. **Extract Problem State**:
+   Execute `python3 bridge/coding_solver.py details` to extract title, problem description, constraints, and starter code.
+2. **Inspect Driver Harness**:
+   Verify whether data structures (e.g., `struct Node` for Linked Lists or Trees) are pre-defined in the harness. Avoid duplicate symbol declarations that trigger compilation errors.
+3. **Direct Buffer Injection**:
+   Write the synthesized C++17 solution to `/tmp/solution.cpp` and inject via `python3 bridge/coding_solver.py inject /tmp/solution.cpp`. Do not simulate keystrokes.
+4. **Compile & Sample Verification**:
+   Execute `python3 bridge/coding_solver.py run` and verify output matches expected results.
+5. **Full Suite Submission**:
+   Execute `python3 bridge/coding_solver.py submit` and poll until `Testcases Passed` or `Hurray!` appears.
+6. **Clean Navigation**:
+   Execute `python3 bridge/coding_solver.py back` to return to syllabus (automatically clicks `"YES"` if prompted with an unsaved changes confirmation modal).
 
-| Linked Lists Suite (100% Passed) | Postorder Traversal (88/88 Passed) |
-| :---: | :---: |
-| ![Linked Lists](assets/ccbp_linked_list_all_solved.png) | ![Postorder Traversal](assets/ccbp_postorder_solved.png) |
+### 2. MCQ Practice SOP
+1. **Fetch Question**:
+   Execute `python3 bridge/mcq_solver.py question` to receive structured JSON containing the question text, 0-indexed options, and attempt progress.
+2. **Select & Submit**:
+   Deduce the correct 0-based option index and execute `python3 bridge/mcq_solver.py answer <index>` to select the radio label, click `"SUBMIT"`, and click `"NEXT"`.
+3. **Exit Session**:
+   When question 10 is reached and `isCompleted` is `true`, execute `python3 bridge/mcq_solver.py proceed` to return to syllabus.
+
+---
+
+## 🛠️ Tooling & Bridge CLI Reference
+
+All automation scripts are located in `bridge/` and communicate with the persistent daemon on port `9999`:
+
+```bash
+# Daemon Management
+python3 bridge/bridge.py                     # Start persistent CDP daemon (:9999)
+curl -s http://127.0.0.1:9999/status         # Check health & active target
+curl -s http://127.0.0.1:9999/reattach       # Re-attach to active CCBP tab
+
+# Coding Practices
+python3 bridge/coding_solver.py details      # Extract title, description, starter code
+python3 bridge/coding_solver.py inject <file># Set Ace buffer
+python3 bridge/coding_solver.py run          # Run sample cases
+python3 bridge/coding_solver.py submit       # Submit against test suite
+python3 bridge/coding_solver.py poll         # Poll judge status
+python3 bridge/coding_solver.py back         # Navigate back (auto-dismisses modal)
+
+# MCQ Practices
+python3 bridge/mcq_solver.py question        # Get current question & options
+python3 bridge/mcq_solver.py answer <index>  # Select option, submit, advance
+python3 bridge/mcq_solver.py proceed         # Exit completion modal back to syllabus
+python3 bridge/mcq_solver.py start           # Launch next practice from syllabus
+```
+
+---
+
+## 🛡️ Edge Cases & Self-Healing Guide
+
+| Failure Mode | Underlying Cause | Autonomous Self-Healing Action |
+| :--- | :--- | :--- |
+| **Port 9999 connection refused** | Bridge daemon process is not running. | Run `python3 bridge/bridge.py` in the background (`IsDaemon: true`). Verify via `curl -s http://127.0.0.1:9999/status`. |
+| **Ace editor not detected** | Question page currently shows Description or Editorial tab. | Click Code tab: `Array.from(document.querySelectorAll("div, button, a")).find(el => el.textContent.trim() === "Code").click()`. |
+| **Duplicate symbol compilation error** | Re-defining classes/structs already present in CCBP harness. | Check `starterCode` using `python3 bridge/coding_solver.py details` and supply only the requested method or class. |
+| **Back button blocked** | Unsaved changes dialog modal is open. | Dispatch click on button with text `"YES"`: `Array.from(document.querySelectorAll("button")).find(b => b.innerText.trim() === "YES").click()`. |
+| **Target desync / page navigation** | Page navigated to a new question UUID. | Call `curl -s http://127.0.0.1:9999/reattach` to re-sync the session. |
+| **Submit button missing** | Previous evaluation still running (`Processing...`). | Wait 1-2 seconds for execution to settle before triggering submission. |
 
 ---
 
 ## 📂 Repository Layout
 
 ```text
-├── SKILL.md                    # Official AI Agent Skill Specification (No images/stats)
-├── assets/                     # Verification screenshots and visual audit proof
-│   ├── ccbp_mcq_practice4_10_correct.png
-│   ├── ccbp_mcq_practice2_10_correct.png
-│   ├── ccbp_mcq_10_correct.png
-│   ├── ccbp_postorder_solved.png
-│   ├── ccbp_linked_list_all_solved.png
-│   └── ...
-├── bridge/                     # Persistent CDP WebSocket Daemon & automation scripts
-│   ├── bridge.py               # Rule 1 compliant single-handshake persistent CDP bridge
-│   ├── coding_solver.py        # CLI helper for autonomous coding problem extraction & injection
-│   ├── eval_helper.py          # HTTP IPC client for sub-millisecond evaluation
+├── SKILL.md                    # Official AI Agent Skill Specification (Pure information)
+├── bridge/                     # Persistent CDP WebSocket Daemon & CLI automation tools
+│   ├── bridge.py               # Rule 1 compliant persistent CDP daemon (:9999)
+│   ├── coding_solver.py        # Autonomous coding problem extraction & injection CLI
+│   ├── eval_helper.py          # HTTP IPC client for sub-millisecond JS eval
 │   ├── mcq_solver.py           # Automated MCQ extraction & submission helper
 │   └── requirements.txt
-├── docs/                       # Comprehensive engineering documentation & blueprints
+├── docs/                       # Technical documentation & blueprints
 │   ├── AGENT_PLAYBOOK.md       # Autonomous AI Agent Playbook, state machines & SOP
-│   ├── MASTER_REPORT.md        # 27/27 Coding Practice report & full performance audit
-│   ├── MCQ_PRACTICE_REPORT.md  # 40/40 MCQ Practice report & React DOM blueprint
+│   ├── MASTER_REPORT.md        # Technical analysis of coding practice problems
+│   ├── MCQ_PRACTICE_REPORT.md  # Technical analysis of MCQ practice questions
 │   └── RULES_AND_ARCHITECTURE.md # Rule 1 enforcement & CDP multiplexing mechanics
-└── solutions/                  # Optimized C++17 implementations (100% passed)
+└── solutions/                  # Reference C++17 implementations
     ├── 01_stacks_and_queues/
     ├── 02_linked_lists/
     ├── 03_hashing_and_two_pointers/
@@ -139,13 +150,11 @@ Production-grade automated browser solving system and reverse-engineered DOM ski
 
 ---
 
-## 📖 Detailed Engineering Reports & Agent Knowledge
+## 📖 Related Documentation
 
-- ⚡ **[AI Agent Skill Guide (SKILL.md)](SKILL.md)**: Official Skill file with YAML frontmatter containing pure actionable technical protocols, DOM selectors, execution SOP, and error recovery—free of images and statistics.
-- 🤖 **[Autonomous AI Agent Playbook & SOP](docs/AGENT_PLAYBOOK.md)**: Machine-executable specifications, state machines, autonomous decision trees, self-healing error recovery, and system prompt templates for AI subagents.
-- 📘 **[Coding Practice Master Report & Benchmark Audit](docs/MASTER_REPORT.md)**: Complete analysis of 27 algorithmic practices, test case matrices, and runtime data.
-- 📝 **[MCQ Practice Master Report & DOM Blueprint](docs/MCQ_PRACTICE_REPORT.md)**: Reverse-engineered React state lifecycle, selector mapping, and 40/40 answers breakdown.
-- 🛡️ **[Rule 1 Architecture & Persistent CDP Mechanics](docs/RULES_AND_ARCHITECTURE.md)**: Chrome 128+ remote debugging security analysis, persistent daemon design, and latency optimizations.
+- ⚡ **[AI Agent Skill Guide (SKILL.md)](SKILL.md)**: Agent-executable skill document with YAML frontmatter.
+- 🤖 **[Autonomous Agent Playbook (docs/AGENT_PLAYBOOK.md)](docs/AGENT_PLAYBOOK.md)**: Detailed state machine diagrams and prompt templates for AI subagents.
+- 🛡️ **[Rule 1 Architecture (docs/RULES_AND_ARCHITECTURE.md)](docs/RULES_AND_ARCHITECTURE.md)**: Chrome 128+ remote debugging security analysis and persistent daemon design.
 
 ---
 
