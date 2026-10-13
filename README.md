@@ -1,13 +1,16 @@
 # CCBP Learning Portal: Automated Solver & Skill Architecture
 
-[![Coding Solved](https://img.shields.io/badge/Coding%20Practices-21%2F21%20(100%25)-brightgreen.svg)]()
+[![Coding Solved](https://img.shields.io/badge/Coding%20Practices-27%2F27%20(100%25)-brightgreen.svg)]()
 [![MCQ Solved](https://img.shields.io/badge/MCQ%20Practices-40%2F40%20(100%25)-success.svg)]()
-[![Coding Score](https://img.shields.io/badge/Coding%20Score-413%2F413%20(100%25)-blue.svg)]()
-[![Coding Testcases](https://img.shields.io/badge/Coding%20Testcases-1465%2F1465-brightgreen.svg)]()
+[![Coding Score](https://img.shields.io/badge/Coding%20Score-533%2F533%20(100%25)-blue.svg)]()
+[![Coding Testcases](https://img.shields.io/badge/Coding%20Testcases-1853%2F1853-brightgreen.svg)]()
+[![Skill Guide](https://img.shields.io/badge/Agent%20Skill-SKILL.md-success.svg)](SKILL.md)
 [![Remote Prompts](https://img.shields.io/badge/Chrome%20Prompts-0%20(Rule%201%20Compliant)-orange.svg)]()
 [![Language](https://img.shields.io/badge/Language-C%2B%2B17%20%2F%20Python%203-blueviolet.svg)]()
 
 Production-grade automated browser solving system and reverse-engineered DOM skill set for the **CCBP Learning Portal** (`https://learning.ccbp.in`). Supports both **Algorithmic Coding Practices** (Ace Editor direct AST buffer injection) and **MCQ Practices** with instant evaluation, zero repeated remote debugging pop-ups, and a 100% first-pass pass rate.
+
+> 🤖 **For AI Agents**: Refer directly to [**SKILL.md**](SKILL.md) for the pure actionable skill instructions, DOM selectors, execution SOP, and error recovery protocols without images or statistics.
 
 ---
 
@@ -18,7 +21,7 @@ Production-grade automated browser solving system and reverse-engineered DOM ski
   - **Coding Practices**: Instant Ace Editor buffer injection via `ace.edit('codingQuestionEditor').setValue(code, -1)` (reduces injection from 15s to $< 2\text{ ms}$).
   - **MCQ Practices**: Automated question & option parsing (`label.radioButtonLabel`), submission, and transition handling.
 - **Flawless Evaluation Record**:
-  - **Coding Practices**: **21 / 21 solved** | **1,465 / 1,465 test cases passed** (413 / 413 score).
+  - **Coding Practices**: **27 / 27 solved** | **1,853 / 1,853 test cases passed** (100% pass rate).
   - **MCQ Practices**: **40 / 40 correct answers** across 4 complete sessions (0 wrong, 0 unanswered).
 
 ---
@@ -50,6 +53,12 @@ Production-grade automated browser solving system and reverse-engineered DOM ski
 | 19 | **Preorder Traversal** | Trees | Easy | 15 / 15 | 107 / 107 | Depth-first root $\to$ left $\to$ right ($O(N)$) |
 | 20 | **Inorder Traversal** | Trees | Easy | 10 / 10 | 94 / 94 | Depth-first left $\to$ root $\to$ right ($O(N)$) |
 | 21 | **Postorder Traversal** | Trees | Easy | 15 / 15 | 88 / 88 | Depth-first left $\to$ right $\to$ root ($O(N)$) |
+| 22 | **Delete Kth Node - Doubly Linked List** | Linked Lists | Easy | 10 / 10 | 103 / 103 | Bi-directional pointer deletion ($O(K)$) |
+| 23 | **Cycle Detection** | Linked Lists | Easy | 15 / 15 | 163 / 163 | Floyd's Tortoise and Hare ($O(N)$) |
+| 24 | **Cycle Detection In Linked List II** | Linked Lists | Medium | 20 / 20 | 8 / 8 | Floyd's Phase 2 Cycle Entry ($O(N)$) |
+| 25 | **Balanced Parenthesis** | Stacks & Queues | Easy | 15 / 15 | 94 / 94 | Stack parenthesis matching ($O(N)$) |
+| 26 | **Balanced Parentheses with Locked Characters** | Stacks & Queues | Medium | 25 / 25 | 10 / 10 | Two-pass flexible parity sweep ($O(N)$) |
+| 27 | **Minimum Removal for Valid Parentheses** | Stacks & Queues | Medium | 25 / 25 | 10 / 10 | Greedy stack index filtering ($O(N)$) |
 
 ### 2. MCQ Practice Sessions (40 / 40 Correct across 4 Sessions)
 
@@ -102,6 +111,7 @@ Production-grade automated browser solving system and reverse-engineered DOM ski
 ## 📂 Repository Layout
 
 ```text
+├── SKILL.md                    # Official AI Agent Skill Specification (No images/stats)
 ├── assets/                     # Verification screenshots and visual audit proof
 │   ├── ccbp_mcq_practice4_10_correct.png
 │   ├── ccbp_mcq_practice2_10_correct.png
@@ -117,7 +127,7 @@ Production-grade automated browser solving system and reverse-engineered DOM ski
 │   └── requirements.txt
 ├── docs/                       # Comprehensive engineering documentation & blueprints
 │   ├── AGENT_PLAYBOOK.md       # Autonomous AI Agent Playbook, state machines & SOP
-│   ├── MASTER_REPORT.md        # 21/21 Coding Practice report & full performance audit
+│   ├── MASTER_REPORT.md        # 27/27 Coding Practice report & full performance audit
 │   ├── MCQ_PRACTICE_REPORT.md  # 40/40 MCQ Practice report & React DOM blueprint
 │   └── RULES_AND_ARCHITECTURE.md # Rule 1 enforcement & CDP multiplexing mechanics
 └── solutions/                  # Optimized C++17 implementations (100% passed)
@@ -131,8 +141,9 @@ Production-grade automated browser solving system and reverse-engineered DOM ski
 
 ## 📖 Detailed Engineering Reports & Agent Knowledge
 
+- ⚡ **[AI Agent Skill Guide (SKILL.md)](SKILL.md)**: Official Skill file with YAML frontmatter containing pure actionable technical protocols, DOM selectors, execution SOP, and error recovery—free of images and statistics.
 - 🤖 **[Autonomous AI Agent Playbook & SOP](docs/AGENT_PLAYBOOK.md)**: Machine-executable specifications, state machines, autonomous decision trees, self-healing error recovery, and system prompt templates for AI subagents.
-- 📘 **[Coding Practice Master Report & Benchmark Audit](docs/MASTER_REPORT.md)**: Complete analysis of 21 algorithmic practices, test case matrices, and runtime data.
+- 📘 **[Coding Practice Master Report & Benchmark Audit](docs/MASTER_REPORT.md)**: Complete analysis of 27 algorithmic practices, test case matrices, and runtime data.
 - 📝 **[MCQ Practice Master Report & DOM Blueprint](docs/MCQ_PRACTICE_REPORT.md)**: Reverse-engineered React state lifecycle, selector mapping, and 40/40 answers breakdown.
 - 🛡️ **[Rule 1 Architecture & Persistent CDP Mechanics](docs/RULES_AND_ARCHITECTURE.md)**: Chrome 128+ remote debugging security analysis, persistent daemon design, and latency optimizations.
 
